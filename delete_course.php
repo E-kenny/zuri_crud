@@ -9,7 +9,10 @@ include_once __DIR__."/login_checker.php";
 
 include_once "layout_head.php";
 
-// include database connection
+echo "<div>
+<a href='read_all_courses.php' class='btn btn-default pull-right'>Read Courses</a>
+</div>";
+
  
 // check if value was posted
 if($_GET){
