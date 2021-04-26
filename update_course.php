@@ -46,7 +46,7 @@ $user_id=$course->user_id;
 
 
   
-echo "<div class='right-button-margin'>
+echo "<div>
           <a href='read_all_courses.php' class='btn btn-default pull-right'>Read Courses</a>
      </div>";
   
