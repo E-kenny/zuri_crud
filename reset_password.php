@@ -38,7 +38,7 @@ $user->Id = $id;
         
             // reset password
             if($user->updatePassword()){
-                echo "<div class='alert alert-info'>Password was reset. Please <a href='{$home_url}login'>login.</a></div>";
+                echo "<div class='alert alert-info'>Password was reset. Please <a href='{$home_url}login.php'>login.</a></div>";
             }
         
             else{

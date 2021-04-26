@@ -68,9 +68,9 @@ if($num>0){
   
                 echo "<td>";
                     // edit and delete button
-                echo    "<a href=\"{$home_url}delete_course?id={$Id}\"><button>Delete</button></a>";
+                echo    "<a href=\"{$home_url}delete_course.php?id={$Id}\"><button>Delete</button></a>";
 
-                echo    "<a href=\"{$home_url}update_course?id={$Id}\"><button>Update</button></a>";
+                echo    "<a href=\"{$home_url}update_course.php?id={$Id}\"><button>Update</button></a>";
 
                 echo "</td>";
   

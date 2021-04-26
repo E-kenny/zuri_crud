@@ -35,7 +35,7 @@ if($_POST){
     // check if email already exists
     if($user->emailExists()){
         echo "<div class='alert alert-danger'>";
-            echo "The email you specified is already registered. Please try again or <a href='{$home_url}login'>login.</a>";
+            echo "The email you specified is already registered. Please try again or <a href='{$home_url}login.php'>login.</a>";
         echo "</div>";
     }
  
