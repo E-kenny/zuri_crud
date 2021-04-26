@@ -49,7 +49,7 @@ $user->password=$_POST['password'];
 if($user->create()){
  
     echo "<div class='alert alert-info'>";
-        echo "Successfully registered. <a href='{$home_url}login'>Please login</a>.";
+        echo "Successfully registered. <a href='{$home_url}login.php'>Please login</a>.";
     echo "</div>";
  
     // empty posted values
