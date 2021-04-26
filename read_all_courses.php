@@ -52,7 +52,7 @@ if($num>0){
             echo "<th>course</th>";
             echo "<th>Course_Code</th>";
             echo "<th>Created</th>";
-            echo "<th>Update</th>";
+            echo "<th>Updated</th>";
         echo "</tr>";
   
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
