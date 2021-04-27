@@ -70,7 +70,7 @@ if($action =='not_yet_logged_in'){
 // tell the user to login
 else if($action=='please_login'){
     echo "<div class='alert alert-info'>
-        <strong>Please login to access that page.</strong>
+        <strong>Please login.</strong>
     </div>";
 }
  

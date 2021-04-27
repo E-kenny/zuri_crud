@@ -34,7 +34,7 @@ echo "<div class='col-md-12'>";
     // content once logged in
     echo "<div class='alert alert-info'>";
         echo "<h3>This is the Zuri Intership</h3>";
-        echo '<li><a href='."$home_url".'read_all_courses.php?><button>Read All My Courses</button></a></li>';
+        echo '<li><a href='."$home_url".'read_all_courses.php?><button>Read All Courses</button></a></li>';
     echo "</div>";
  
 echo "</div>";
