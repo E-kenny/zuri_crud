@@ -62,7 +62,7 @@ if($num>0){
             echo "<tr>";
                 echo "<td>{$Id}</td>";
                 echo "<td>{$course}</td>";
-                echo "<td>{$course_code}</td>";
+                echo "<td>{$code}</td>";
                 echo "<td>{$created}</td>";
                 echo "<td>{$updated}</td>";;
   
