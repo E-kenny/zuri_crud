@@ -18,10 +18,37 @@ include_once __DIR__."/layout_head.php";
  
 echo "<div class='col-md-12'>";
  
+$emailErr = $passwordErr = "";
+
+function clean_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+
+
     // if form was posted
 if($_POST){
- 
-    // get database connection
+
+    if( !empty($_POST['email']) ){
+        $email = clean_input($_POST['email']);
+        $passwordLength = strlen($_POST['password']);
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL) ||  $passwordLength < 6){
+            
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                $emailErr = "invalid email format";
+            }            
+           
+            if($passwordLength < 6){
+                $passwordErr = "password must be greater than 6";
+            }
+
+        }else{
+
+
+            // get database connection
     $database = new Database();
     $db = $database->getConnection();
  
@@ -30,7 +57,7 @@ if($_POST){
     $utils = new Utils();
  
     // set user email to detect if it already exists
-    $user->email=$_POST['email'];
+    $user->email = $email;
  
     // check if email already exists
     if($user->emailExists()){
@@ -55,14 +82,24 @@ if($user->create()){
     // empty posted values
     $_POST=array();
  
-}else{
+    }else{
     echo "<div class='alert alert-danger' role='alert'>Unable to register. Please try again.</div>";
-}
     }
+
+
+    }
+
+
+        
+    }
+    
+    }
+
 }
 ?>
 <form action='register.php' method='post' id='register'>
- 
+            <?php echo "<p style=\"color:red;\"> $emailErr </p>";?>
+            <?php echo "<p style=\"color:red;\"> $passwordErr </p>";?>
     <table class='table table-responsive'>
  
         <tr>
