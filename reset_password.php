@@ -55,7 +55,7 @@ $user->Id = $id;
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button type='submit' class='btn btn-primary'>Reset Password</button></td>
+                    <td><button type='submit' class='btn btn-primary'>Reset</button></td>
                 </tr>
             </table>
         </form>";
