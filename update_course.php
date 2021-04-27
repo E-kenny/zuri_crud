@@ -10,12 +10,16 @@
 <?php
 // set page header
 $page_title = "Update Course";
+include_once __DIR__."/config/core.php";
+
+$_SESSION['Id'];
 
 // include login checker
 include_once __DIR__."/login_checker.php";
 
  include_once __DIR__."/layout_head.php";
  //get ID of the course to be edited
+
 $id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: missing ID.');
 
 include_once __DIR__."/config/core.php";
@@ -58,7 +62,6 @@ if($_POST){
     // set course property values
     $course->course = $_POST['course'];
     $course->course_code = $_POST['code'];
-    $course->user_id = $_POST['user_id'];
   
     // update the course
     if($course->update()){
@@ -90,8 +93,7 @@ if($_POST){
       <td><input type='text' name='code' class='form-control' value='<?php echo "$course_code";?>' /></td>
   </tr>
   
-  <input type='hidden' name='user_id' class='form-control' value='<?php echo "$user_id";?>'/>
- 
+  
   <tr>
       <td></td>
       <td>

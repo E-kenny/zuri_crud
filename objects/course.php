@@ -94,13 +94,13 @@ function readOne(){
 }
 
 function update(){
-      
+    echo  $this->user_id;
  $query = "UPDATE " . $this->table_name . " SET
                 course=:course,
-                course_code=:course_code, user_id=:user_id,
+                course_code=:course_code,
                 updated=:updated           
                  WHERE
-                Id=:id";
+                Id=:id AND user_id=:user_id";
     $stmt = $this->conn->prepare($query);
 
     
@@ -111,7 +111,6 @@ function update(){
     $this->Id=htmlspecialchars(strip_tags($this->Id));
     $this->course=htmlspecialchars(strip_tags($this->course));
     $this->course_code=htmlspecialchars(strip_tags($this->course_code));
-    $this->user_id=htmlspecialchars(strip_tags($this->user_id));
     $this->updated=htmlspecialchars(strip_tags($this->updated));
   
     // bind parameters
@@ -133,10 +132,11 @@ function update(){
 // delete the product
 function delete(){
   
-    $query = "DELETE FROM " . $this->table_name . " WHERE Id = ?";
+    $query = "DELETE FROM " . $this->table_name . " WHERE Id =:id AND user_id=:user_id";
       
     $stmt = $this->conn->prepare($query);
-    $stmt->bindParam(1, $this->id);
+    $stmt->bindParam(":id", $this->id);
+    $stmt->bindParam(":user_id", $this->user_id);
   
     if($result = $stmt->execute()){
         return true;
