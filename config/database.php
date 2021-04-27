@@ -3,17 +3,17 @@
 class Database{
  
     //specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "zuridb";
-    private $username = "root";
-    private $password = "";
-    public $conn;
-
-    // private $host = "remotemysql.com";
-    // private $db_name = "qnW6GtII8g";
-    // private $username = "qnW6GtII8g";
-    // private $password = "ilztEyWXc6";
+    // private $host = "localhost";
+    // private $db_name = "zuridb";
+    // private $username = "root";
+    // private $password = "";
     // public $conn;
+
+    private $host = "remotemysql.com";
+    private $db_name = "qnW6GtII8g";
+    private $username = "qnW6GtII8g";
+    private $password = "ilztEyWXc6";
+    public $conn;
 
     // get the database connection
     public function getConnection(){
