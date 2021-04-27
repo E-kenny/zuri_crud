@@ -93,8 +93,7 @@ function readOne(){
 }
 
 function update(){
-    echo  $this->user_id;
- $query = "UPDATE " . "$this->table_name" . " SET
+     $query = "UPDATE " . "$this->table_name" . " SET
                 course=:course,
                 course_code=:course_code,
                 updated=:updated 
