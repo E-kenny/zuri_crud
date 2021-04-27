@@ -72,7 +72,7 @@ function readAll(){
 function readOne(){
   
     $query = "SELECT
-                course, course_code, user_id, created, updated
+                course, course_code, created, updated
             FROM
                 " . $this->table_name . "
             WHERE
@@ -88,19 +88,18 @@ function readOne(){
   
     $this->course = $row['course'];
     $this->course_code = $row['course_code'];
-    $this->user_id = $row['user_id'];
     $this->created = $row['created'];
     $this->updated = $row['updated'];
 }
 
 function update(){
     echo  $this->user_id;
- $query = "UPDATE " . $this->table_name . " SET
+ $query = "UPDATE " . "$this->table_name" . " SET
                 course=:course,
                 course_code=:course_code,
-                updated=:updated           
+                updated=:updated 
                  WHERE
-                Id=:id AND user_id=:user_id";
+                (Id=:id) AND (user_id=:user_id)";
     $stmt = $this->conn->prepare($query);
 
     
@@ -119,9 +118,9 @@ function update(){
     $stmt->bindParam(":user_id", $this->user_id);
     $stmt->bindParam(":updated", $this->updated);
     $stmt->bindParam(":id", $this->Id);
-    
+    $stmt->execute();
     // execute the query
-    if($stmt->execute()){
+    if($stmt->rowCount() > 0){
         return true;
     }
   
@@ -137,8 +136,9 @@ function delete(){
     $stmt = $this->conn->prepare($query);
     $stmt->bindParam(":id", $this->id);
     $stmt->bindParam(":user_id", $this->user_id);
-  
-    if($result = $stmt->execute()){
+    $stmt->execute();
+    
+    if($stmt->rowCount() > 0){
         return true;
     }else{
         return false;

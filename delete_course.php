@@ -27,6 +27,8 @@ if($_GET){
   
     // prepare course object
     $course = new Course($db);
+    $course->user_id= $_SESSION['Id'];
+
       
     // set course id to be deleted
     $course->id = $_GET['id'];

@@ -12,8 +12,6 @@
 $page_title = "Update Course";
 include_once __DIR__."/config/core.php";
 
-$_SESSION['Id'];
-
 // include login checker
 include_once __DIR__."/login_checker.php";
 
@@ -26,8 +24,8 @@ include_once __DIR__."/config/core.php";
 
   
 // include database and object files
-include_once 'config/database.php';
-include_once 'objects/course.php';
+include_once __DIR__.'/config/database.php';
+include_once __DIR__.'/objects/course.php';
   
 // get database connection
 $database = new Database();
@@ -45,7 +43,6 @@ $course->readOne();
 
 $edited_course=$course->course;
 $course_code=$course->course_code;
-$user_id=$course->user_id;
 
 
 
