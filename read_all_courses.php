@@ -70,7 +70,7 @@ if($num>0){
                     // edit and delete button
                 echo    "<a href=\"{$home_url}update_course.php?id={$Id}\"> <button> Update </button> </a>";
                 
-                echo "<a href='#' onclick='delete_user({$Id});'  class='btn btn-danger'> <button> Delete </button> </a>";
+                echo "<a href='#' onclick='delete_user({$Id});'  class='btn btn-danger'> Delete </a>";
                 
                 echo "</td>";
 
