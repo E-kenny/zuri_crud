@@ -40,7 +40,7 @@ $course->Id = $id;
 $stmt = $course->readAll();
 $num = $stmt->rowCount();
 echo "<div>
-<a href='create_course.php'><button>Create Course</button></a>
+<a href='create_course.php'><button>All Course</button></a>
 </div>"; 
 
 // display the course if there are any
