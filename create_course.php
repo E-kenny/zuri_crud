@@ -30,7 +30,7 @@ $db = $database->getConnection();
 // pass connection to course object
 $course = new Course($db);
 // set page headers
-$page_title = "Create Course";
+$page_title = "Add Course";
 
 include_once "layout_head.php";
 
