@@ -68,13 +68,16 @@ if($num>0){
   
                 echo "<td>";
                     // edit and delete button
-                echo    "<a href=\"{$home_url}delete_course.php?id={$Id}\"><button>Delete</button></a>";
-
-                echo    "<a href=\"{$home_url}update_course.php?id={$Id}\"><button>Update</button></a>";
-
+                echo    "<a href=\"{$home_url}update_course.php?id={$Id}\"> <button> Update </button> </a>";
+                
+                echo "<a href='#' onclick='delete_user({$Id});'  class='btn btn-danger'> <button> Delete </button> </a>";
+                
                 echo "</td>";
+
+                echo "</tr>";
+
   
-            echo "</tr>";
+            
   
         }
   
@@ -91,5 +94,18 @@ else{
 // set page footer
 include_once __DIR__."/layout_foot.php";
 ?>
+
+<script type='text/javascript'>
+// confirm record deletion
+function delete_user( id ){
+     
+    var answer = confirm('Are you sure?');
+    if (answer){
+        // if user clicked ok, 
+        // pass the id to delete.php and execute the delete query
+        window.location = 'delete_course.php?id=' + id;
+    } 
+}
+</script>
 </body>
 </html>
