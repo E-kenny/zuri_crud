@@ -12,7 +12,7 @@
 include_once __DIR__."/config/core.php";
 
 // set page header
-$page_title = "Read Courses";
+$page_title = "All Courses";
 
 // include login checker
 $require_login=true;

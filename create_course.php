@@ -35,7 +35,7 @@ $page_title = "Create Course";
 include_once "layout_head.php";
 
 echo "<div>
-<a href='read_all_courses.php' class='btn btn-default pull-right'>Read Courses</a>
+<a href='read_all_courses.php' class='btn btn-default pull-right'>All Courses</a>
 </div>";
 
     
