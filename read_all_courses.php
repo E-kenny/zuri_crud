@@ -53,6 +53,7 @@ if($num>0){
             echo "<th>Code</th>";
             echo "<th>Created</th>";
             echo "<th>Updated</th>";
+            echo "<th>Action</th>";
         echo "</tr>";
   
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -68,7 +69,7 @@ if($num>0){
   
                 echo "<td>";
                     // edit and delete button
-                echo    "<a href=\"{$home_url}update_course.php?id={$Id}\"> <button> Update </button> </a>";
+                echo    "<a href=\"{$home_url}update_course.php?id={$Id}\" class='btn btn-success'>  Update  </a>";
                 
                 echo "<a href='#' onclick='delete_user({$Id});'  class='btn btn-danger'> Delete </a>";
                 
