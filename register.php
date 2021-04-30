@@ -54,7 +54,6 @@ if($_POST){
  
     // initialize objects
     $user = new User($db);
-    $utils = new Utils();
  
     // set user email to detect if it already exists
     $user->email = $email;

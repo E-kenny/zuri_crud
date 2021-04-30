@@ -21,7 +21,7 @@ class User{
 function emailExists(){
  
     // query to check if email exists
-    $query = "SELECT id, name, email,  password
+    $query = "SELECT Id, name, email,  password
             FROM " . $this->table_name . "
             WHERE email = ?
             LIMIT 0,1";
@@ -48,7 +48,51 @@ function emailExists(){
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
         // assign values to object properties
-        $this->Id = $row['id'];
+        $this->Id = $row['Id'];
+        $this->name = $row['name'];
+        $this->email = $row['email'];
+        $this->password = $row['password'];
+        
+       
+ 
+        // return true because email exists in the database
+        return true;
+    }
+ 
+    // return false if email does not exist in the database
+    return false;
+}
+
+  // check if given email exist in the database
+  function idExists(){
+ 
+    // query to check if email exists
+    $query = "SELECT Id, name, email,  password
+            FROM " . $this->table_name . "
+            WHERE Id = ?
+            LIMIT 0,1";
+ 
+    // prepare the query
+    $stmt = $this->conn->prepare( $query );
+ 
+ 
+    // bind given email value
+    $stmt->bindParam(1, $this->Id);
+ 
+    // execute the query
+    $stmt->execute();
+ 
+    // get number of rows
+    $num = $stmt->rowCount();
+ 
+    // if id exists, assign values to object properties for easy access and use for php sessions
+    if($num>0){
+ 
+        // get record details / values
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+        // assign values to object properties
+        $this->Id = $row['Id'];
         $this->name = $row['name'];
         $this->email = $row['email'];
         $this->password = $row['password'];
